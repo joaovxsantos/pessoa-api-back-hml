@@ -10,5 +10,4 @@ FROM openjdk:18-jdk-slim
 COPY --from=build /home/app/target/*.jar /usr/local/lib/app.jar
 EXPOSE 80
 
-#ENTRYPOINT ["java","-Dserver.port=80", "-Dspring.datasource.url=${DATASOURCE_URL:teste}","-Dspring.datasource.username=${DATASOURCE_USERNAME:teste}","-Dspring.datasource.password=${DATASOURCE_PASSWORD:teste}", "-jar","/usr/local/lib/app.jar"]
-ENTRYPOINT ["java","-Dserver.port=80", "-Dspring.datasource.url=${DATASOURCE_URL:teste}","-Dspring.datasource.username=${DATASOURCE_USERNAME:teste}","-Dspring.datasource.password=${DATASOURCE_PASSWORD:teste}", "-jar","/usr/local/lib/app.jar"]
+ENTRYPOINT ["java","-Dserver.port=80", "-Dspring.datasource.url=${DATASOURCE_URL}","-Dspring.datasource.username=${DATASOURCE_USERNAME}","-Dspring.datasource.password=${DATASOURCE_PASSWORD}", "-jar","/usr/local/lib/app.jar"]
