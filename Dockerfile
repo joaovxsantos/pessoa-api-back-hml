@@ -8,6 +8,6 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 FROM openjdk:18-jdk-slim
 COPY --from=build /home/app/target/*.jar /usr/local/lib/app.jar
-EXPOSE 80
+EXPOSE 8080
 
-ENTRYPOINT ["java","-Dserver.port=80", "-Dspring.datasource.url=${DATASOURCE_URL}","-Dspring.datasource.username=${DATASOURCE_USERNAME}","-Dspring.datasource.password=${DATASOURCE_PASSWORD}", "-jar","/usr/local/lib/app.jar"]
+ENTRYPOINT ["java", "-jar","/usr/local/lib/app.jar"]
