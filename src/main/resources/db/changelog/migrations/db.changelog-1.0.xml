@@ -4,9 +4,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="1" author="autor">
-        <createSchema schemaName="vem_ser"/>
-    </changeSet>
+
 
     <changeSet id="2" author="autor">
         <createTable tableName="Pessoa" schemaName="vem_ser">
